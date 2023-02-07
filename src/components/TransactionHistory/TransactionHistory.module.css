@@ -1,0 +1,33 @@
+.transactionHistory {
+margin:  0 auto;
+font-family: 'Times New Roman', Times, serif;
+}
+
+.tableLine {
+    height: 70px;
+}
+
+.tableColumn {
+    width: 200px;
+    border: solid 2px black;
+}
+
+.tableHead {
+    table-layout:auto;
+    margin: 30px auto;
+    padding: 20px;
+    border: solid 3px silver;
+    border-radius: 20px;
+    background-color: rgba(34, 51, 68, 0.56);
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.tableBody {
+    text-align: center;
+    font-size: 20px;
+    width: 33%;
+    padding: 20px;
+}

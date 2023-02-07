@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
+import css from './Statistic.module.css'
+
 export function Statistics({ title, stats }) {
-  // console.log(typeof(stats[0].id))
+  // console.log(typeof(stats[0].id), stats[0].id)
   return (
-    <section className="statistics">
-      {title? <h2 className="title">{title}</h2> : null}
-      <ul className="stat-list">
+    <section className={css.statistics}>
+      {title ? <h2 className={css.title}>{title}</h2> : null}
+      <ul className={css.stat}>
         {stats.map(({ id, label, percentage }) => {
           return (
-            <li className="item" key={id}>
-              <span className="label">{label}</span>
-              <span className="percentage">{percentage}%</span>
+            <li className={css.item} key={id}>
+              <span className={css.label}>{label}</span>
+              <span className={css.percentage}>{percentage}%</span>
             </li>
           );
         })}
@@ -19,8 +21,11 @@ export function Statistics({ title, stats }) {
 }
 
 Statistics.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.string, 
+  stats: PropTypes.arrayOf( 
+    PropTypes.exact({ 
+      id: PropTypes.string.isRequired, 
+      label: PropTypes.string.isRequired, 
+      percentage: PropTypes.number.isRequired, 
+    }) )
 };
